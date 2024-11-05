@@ -1,0 +1,4 @@
+-   Tab Nav
+-   Responsive
+-   Semantic
+-   Styling maxed

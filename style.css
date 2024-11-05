@@ -1,0 +1,182 @@
+@font-face {
+	font-family: "Inter-Variable";
+	src: url("./assets/fonts/Inter-VariableFont_slnt,wght.ttf");
+}
+* {
+	padding: 0;
+	margin: 0;
+	font-family: "Inter-Variable", sans-serif;
+	user-select: none;
+	box-sizing: border-box; /* Add this to better handle padding */
+}
+body {
+	background: linear-gradient(135deg, beige, beige);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	transition: background 1s ease;
+	padding: 1rem; /* Add padding to prevent content from touching edges */
+}
+
+a {
+	text-decoration: none;
+}
+
+.links {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	width: 100%; /* Make links take full width of container */
+	max-width: 600px; /* Limit maximum width on larger screens */
+}
+
+.link {
+	display: flex;
+	outline: none;
+	border: none;
+	width: 100%; /* Make links take full width */
+	justify-content: center;
+	padding: 1em;
+	border-radius: 1rem;
+	background-color: antiquewhite;
+	color: cadetblue;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+		rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+.link:hover {
+	opacity: 70%;
+	cursor: pointer;
+}
+.link:focus {
+	outline: 3px solid cadetblue; /* Makes focus ring visible */
+	outline-offset: 2px; /* Adds some space around the focus ring */
+	opacity: 70%; /* Same effect as hover */
+	/* Remove the default browser outline if you want */
+	-webkit-focus-ring-color: transparent;
+}
+.link:focus:not(:focus-visible) {
+	outline: none;
+}
+
+.link:focus-visible {
+	outline: 3px solid cadetblue;
+	outline-offset: 2px;
+	opacity: 70%;
+}
+
+button {
+	transition: background 0.5s ease;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	background-color: bisque;
+	width: fit-content;
+	width: 100%; /* Make card take full width on mobile */
+	max-width: 530px; /* Limit maximum width on larger screens */
+	padding: 1.25rem;
+	border-radius: 2rem;
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+		rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.PII {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+}
+#name {
+	margin-top: 0.5em;
+	font-size: 2rem; /* Use relative units */
+	font-weight: bolder;
+}
+#job {
+	color: grey;
+	letter-spacing: 0;
+	font-size: 0.9rem; /* Use relative units */
+}
+.img {
+	/* width: 220px; */
+	width: 100%; /* Make image responsive */
+	max-width: 220px; /* Limit maximum width */
+	height: auto; /* Maintain aspect ratio */
+	/* height: 240px; */
+	border-radius: 1rem;
+	overflow: hidden;
+	box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+		rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.title {
+	margin-bottom: 1em;
+	display: flex;
+	justify-content: center;
+	gap: 1.5em;
+	align-items: center;
+	width: 100%;
+	flex-direction: column; /* Stack elements vertically on mobile */
+}
+
+/* Tablets and larger (768px and up) */
+@media screen and (min-width: 768px) {
+	.title {
+		flex-direction: row; /* Switch to horizontal layout */
+		justify-content: center;
+		gap: 2em;
+	}
+
+	#name {
+		font-size: 2rem;
+	}
+
+	.card {
+		padding: 2rem;
+	}
+}
+
+/* Larger screens (1024px and up) */
+@media screen and (min-width: 1024px) {
+	.card {
+		padding: 2.5rem;
+	}
+
+	.links {
+		display: grid; /* Switch to grid layout for social links */
+		grid-template-columns: repeat(2, 1fr); /* 2 columns */
+		gap: 1.5em;
+		max-width: 600px;
+	}
+}
+
+/* Extra large screens (1280px and up) */
+@media screen and (min-width: 1280px) {
+	.links {
+		grid-template-columns: repeat(3, 1fr); /* 3 columns */
+		max-width: 800px;
+	}
+}
+
+/* For very small screens */
+@media screen and (max-width: 360px) {
+	.card {
+		padding: 1rem;
+		margin: 0.5rem;
+	}
+
+	#name {
+		font-size: 1.25rem;
+	}
+
+	.img {
+		max-width: 180px;
+	}
+}
+
+/* Ensure images in links maintain consistent size */
+.link img {
+	width: 30px;
+	height: 30px;
+	object-fit: contain;
+}
